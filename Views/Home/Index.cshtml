@@ -1,8 +1,51 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+    <h1>Welcome to the File and Image Saver! </h1>
+
+
+    <div class="customer-profile">
+        <form asp-action="AddCustomerProfile" method="post">
+            <input type="text" name="FirstName" placeholder="First Name" class="first-name" />
+            <input type="text" name="LastName" placeholder="Last Name" class="last-name" />
+            <input type="email" name="Email" placeholder="Email" class="email-section" />
+            <input type="text" name="PhoneNumber" placeholder="Phone Number" class="phone-number" />
+            <button type="submit" class="add-button">Add Profile</button>
+        </form>
+    </div>
+
+
+    <form asp-action="ProcessOrder" method="post" class="process-order">
+        <input type="text" name="orderId" placeholder="Order ID" />
+        <button type="submit" class="process-button">Process Order</button>
+    </form>
+
+    <h2>File Upload Section</h2>
+
+    <p1>
+        Upload Contract Here</p>
+
+        <form asp-action="UploadContract" method="post" enctype="multipart/form-data" class="upload-contract">
+            <input type="file" name="file" />
+            <button type="submit" class="upload-contract-button">Upload Contract</button>
+        </form>
+
+        <p2>
+            Upload Image Here</p>
+
+            <form asp-action="UploadImage" method="post" enctype="multipart/form-data" class="upload-image">
+                <input type="file" name="file" />
+                <button type="submit" class="upload-contract-button">Upload Image</button>
+            </form>
+
+</body>
+</html>
+
+
